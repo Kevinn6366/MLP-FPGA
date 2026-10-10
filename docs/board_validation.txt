@@ -1,0 +1,125 @@
+ACTUAL HARDWARE VALIDATION 2026-10-10
+Device: xc7z020_1; Zybo Z7-20; JTAG serial 210351B10585A
+Tools: Vivado 2019.1; actual program_hw_devices + refresh/commit_hw_vio
+Input clock: 125 MHz; PL clock: 25 MHz; JTAG frequency: 5 MHz
+Final build log: build/board/build_corrected.log; exit=0
+Timing: WNS=26.059 ns, WHS=0.030 ns, pulse-width slack=2.000 ns; all constraints met.
+Unconstrained internal endpoints: 0; bus skew: four MET paths.
+Resources including debug: 1716 LUT, 2558 FF, 0 DSP, 0 BRAM, 1 MMCM.
+DRC: 0 errors, RTSTAT-10 debug-hub unloaded-net warning and ZPS7-1 no-PS7 warning retained.
+No ARM inference software, Python runtime inference, SD card or flash programming.
+
+BRIDGE_PASS x=04030201 y=[-59,-139] count=1
+BRIDGE_PASS x=00000000 y=[147,0] count=2
+BRIDGE_PASS x=80808080 y=[11600,-4051] count=3
+BRIDGE_PASS x=7f7f7f7f y=[-2179,-533] count=1
+BRIDGE_ALL_PASS: toggle, busy ignore, sticky done, reset and four tensors
+PROGRAMMED_PL: xc7z020_1 C:/Users/wxg51/Desktop/labsp_MLP_FPGA/build/board/mlp_board.bit
+HARDWARE_READY: xc7z020 VIO MLP4 (actual PL)
+HARDWARE_PASS case=0 x=04030201 y=[-59,-139]
+HARDWARE_PASS case=1 x=00000000 y=[147,0]
+HARDWARE_PASS case=2 x=80808080 y=[11600,-4051]
+HARDWARE_PASS case=3 x=7f7f7f7f y=[-2179,-533]
+HARDWARE_PASS case=4 x=7f807f80 y=[6184,3923]
+HARDWARE_PASS case=5 x=80808080 y=[11600,-4051]
+HARDWARE_PASS case=6 x=7f808080 y=[16340,-5567]
+HARDWARE_PASS case=7 x=807f8080 y=[7367,-6113]
+HARDWARE_PASS case=8 x=7f7f8080 y=[1707,-10767]
+HARDWARE_PASS case=9 x=80807f80 y=[-16590,-17463]
+HARDWARE_PASS case=10 x=7f807f80 y=[6184,3923]
+HARDWARE_PASS case=11 x=807f7f80 y=[-12327,-25401]
+HARDWARE_PASS case=12 x=7f7f7f80 y=[5906,-8353]
+HARDWARE_PASS case=13 x=8080807f y=[2895,-471]
+HARDWARE_PASS case=14 x=7f80807f y=[-1608,-2097]
+HARDWARE_PASS case=15 x=807f807f y=[1179,2925]
+HARDWARE_PASS case=16 x=7f7f807f y=[-5521,-5615]
+HARDWARE_PASS case=17 x=80807f7f y=[-12346,-11819]
+HARDWARE_PASS case=18 x=7f807f7f y=[-1341,2493]
+HARDWARE_PASS case=19 x=807f7f7f y=[114,-13899]
+HARDWARE_PASS case=20 x=7f7f7f7f y=[-2179,-533]
+HARDWARE_PASS case=21 x=000000ff y=[220,8]
+HARDWARE_PASS case=22 x=00000001 y=[49,-15]
+HARDWARE_PASS case=23 x=0000ff00 y=[194,-20]
+HARDWARE_PASS case=24 x=00000100 y=[69,-3]
+HARDWARE_PASS case=25 x=00ff0000 y=[154,20]
+HARDWARE_PASS case=26 x=00010000 y=[78,-44]
+HARDWARE_PASS case=27 x=ff000000 y=[138,28]
+HARDWARE_PASS case=28 x=01000000 y=[78,-53]
+HARDWARE_PASS case=29 x=2d7d317b y=[1110,2017]
+HARDWARE_PASS case=30 x=37949c0e y=[7766,120]
+HARDWARE_PASS case=31 x=30879375 y=[1509,45]
+HARDWARE_PASS case=32 x=8d71c1ef y=[2965,-2971]
+HARDWARE_PASS case=33 x=cdfbf581 y=[2117,-1595]
+HARDWARE_PASS case=34 x=15683de3 y=[51,-3593]
+HARDWARE_PASS case=35 x=5503c788 y=[6350,-7196]
+HARDWARE_PASS case=36 x=f11be733 y=[486,1031]
+HARDWARE_PASS case=37 x=66d3b736 y=[-1649,-2689]
+HARDWARE_PASS case=38 x=2e2f72a3 y=[1902,-4269]
+HARDWARE_PASS case=39 x=6d23133a y=[-1190,-2797]
+HARDWARE_PASS case=40 x=bc98f0f1 y=[-1227,-813]
+HARDWARE_PASS case=41 x=4efd8ff5 y=[2094,-5475]
+HARDWARE_PASS case=42 x=111a34db y=[514,-2275]
+HARDWARE_PASS case=43 x=4cee2507 y=[1135,-1675]
+HARDWARE_PASS case=44 x=b306563b y=[-4349,-7375]
+HARDWARE_PASS case=45 x=a67431a5 y=[-3581,-12675]
+HARDWARE_PASS case=46 x=dc0a20eb y=[-3822,-6127]
+HARDWARE_PASS case=47 x=2d50b069 y=[607,-1679]
+HARDWARE_PASS case=48 x=7b4483e4 y=[-1318,-7523]
+HARDWARE_PASS case=49 x=29ce2bbd y=[2121,2337]
+HARDWARE_PASS case=50 x=4d853d67 y=[-2086,1765]
+HARDWARE_PASS case=51 x=1f1962e3 y=[1139,-4167]
+HARDWARE_PASS case=52 x=72689087 y=[2215,-9667]
+HARDWARE_PASS case=53 x=ed377f65 y=[1598,-7151]
+HARDWARE_PASS case=54 x=0a2361b4 y=[-2283,-7699]
+HARDWARE_PASS case=55 x=191feb98 y=[2705,-6131]
+HARDWARE_PASS case=56 x=85e98e02 y=[10095,-485]
+HARDWARE_PASS case=57 x=1e8f3c7c y=[-3239,881]
+HARDWARE_PASS case=58 x=359d2d27 y=[-1062,-417]
+HARDWARE_PASS case=59 x=43c35774 y=[-345,1491]
+HARDWARE_PASS case=60 x=ce65cd39 y=[415,2049]
+HARDWARE_PASS case=61 x=4b76a600 y=[-4285,-5231]
+HARDWARE_PASS case=62 x=2a697e3b y=[33,1461]
+HARDWARE_PASS case=63 x=67abd220 y=[-85,-2087]
+HARDWARE_PASS case=64 x=77f9c451 y=[-2202,-3267]
+HARDWARE_PASS case=65 x=d8afd784 y=[4103,-947]
+HARDWARE_PASS case=66 x=d918aa04 y=[6057,1537]
+HARDWARE_PASS case=67 x=b588dc09 y=[-855,393]
+HARDWARE_PASS case=68 x=92aaee28 y=[-1149,-4023]
+HARDWARE_PASS case=69 x=28e1ec0e y=[-78,-873]
+HARDWARE_PASS case=70 x=1688f677 y=[-1613,1325]
+HARDWARE_PASS case=71 x=276e6429 y=[-1342,847]
+HARDWARE_PASS case=72 x=fb36ad4b y=[3506,2347]
+HARDWARE_PASS case=73 x=5d0d5657 y=[-83,317]
+HARDWARE_PASS case=74 x=05ed6f23 y=[-4911,-4371]
+HARDWARE_PASS case=75 x=6ee49550 y=[-2699,-3349]
+HARDWARE_PASS case=76 x=9adcce49 y=[1965,-801]
+HARDWARE_PASS case=77 x=4259071e y=[-1812,-2883]
+HARDWARE_PASS case=78 x=66571316 y=[-1038,-4143]
+HARDWARE_PASS case=79 x=f3305991 y=[-5602,-11503]
+HARDWARE_PASS case=80 x=8b62798a y=[-12401,-23799]
+HARDWARE_PASS case=81 x=de9120cf y=[-3765,-3225]
+HARDWARE_PASS case=82 x=68fe8e76 y=[-2817,-3021]
+HARDWARE_PASS case=83 x=ab328778 y=[1693,1645]
+HARDWARE_PASS case=84 x=98f299e8 y=[10073,49]
+HARDWARE_PASS case=85 x=de984303 y=[-11852,-5195]
+HARDWARE_PASS case=86 x=c7cf8f38 y=[6798,1900]
+HARDWARE_PASS case=87 x=c21d1543 y=[3044,-2747]
+HARDWARE_PASS case=88 x=7a3c5a7e y=[-631,-569]
+HARDWARE_PASS case=89 x=82320091 y=[-145,-11313]
+HARDWARE_PASS case=90 x=a85626a0 y=[-3563,-11067]
+HARDWARE_PASS case=91 x=d3dd22c3 y=[-3443,-4343]
+HARDWARE_PASS case=92 x=c281f418 y=[-2889,-1779]
+HARDWARE_ALL_PASS: 93 tensors executed on xc7z020 PL; JTAG VIO; 25 MHz
+
+INTERACTIVE BOARD CONSOLE (two consecutive requests and q exit):
+REAL FPGA PL | Zybo Z7-20 | MLP 4->8->8->8->2 | JTAG VIO
+Enter four integers [-128,127], e.g. [1,2,3,4]. q exits. No simulation or Python.
+[1,2,3,4]
+Sending to FPGA: [1,2,3,4]
+BOARD_RESULT x=04030201 output=[-59,-139] source=FPGA_PL clock=25MHz
+[0,0,0,0]
+Sending to FPGA: [0,0,0,0]
+BOARD_RESULT x=00000000 output=[147,0] source=FPGA_PL clock=25MHz
+q
+
+2026-10-10 cleanup verification: live console returned [1,2,3,4] -> [-59,-139] from FPGA_PL; simplified programming succeeded with PROGRAM_READY after removing simulation/model files. RTL logic and ROM values unchanged.

@@ -1,4 +1,4 @@
-// Generated from model/mlp4_weights.json; do not edit by hand.
+// Fixed random inference parameters (seed 20261010); weights and biases are stored below.
 function signed [7:0] weight_rom;
     input [7:0] address;
     begin
