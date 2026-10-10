@@ -1,35 +1,43 @@
 # labsp_MLP_FPGA
 
-在 Zybo Z7-20 的可编程逻辑（PL）上实现一个多层感知机的前向推理，作为第一次 FPGA 与嵌入式学习项目。
+在 Zybo Z7-20 的 PL 中实现四层 MLP 推理，面向第一次学习 FPGA 的小项目。
 
-目标流程：电脑参考计算 → 定点量化 → Verilog 仿真 → 综合与实现 → JTAG 上板验证。
+## 当前交付
+- 网络：4→8→8→8→2，输入张量 [1,4]，输出张量 [1,2]。
+- 前三层 ReLU，末层保留正负数；固定随机权重，只推理、不训练。
+- 整数 RTL、Python 整数/浮点参考、参数 ROM、Vivado 2019.1 自检仿真。
+- 186 次完整推理、4836 个神经元核对、5 次复位取消全部通过；每次延迟 229 拍。
+- 示例输入 [1,2,3,4] → 输出 [-59,-139]。
+- 尚未综合、实现、生成 bitstream 或上板；随机权重输出不代表预测能力。
 
-## 当前状态
-已实现四输入单神经元RTL，并用Vivado 2019.1行为仿真通过42次数值测试及复位/握手检查。尚未实现完整MLP、训练、综合或板上推理。
+## 开始使用
+先读 [四层 MLP 学习说明](docs/step2_mlp.md)，包括位宽、层间存储、状态机、周期数和波形步骤。
 
-## 初步范围
-- 小型 4 → 8 → 2 网络，隐藏层采用 ReLU。
-- 先用固定测试数据验证计算，再训练简单模型。
-- 推理计算放在PL，电脑端承担训练与参考计算。
-- 工具以已安装的 Vivado 2019.1 为起点，暂不要求SD卡或Linux。
+在项目根目录 PowerShell 执行（先关闭 mlp4_lab 工程）：
 
-## 学习与协作
-先阅读 [协作规则](AGENTS.md)、[阶段计划](docs/plan.md) 和 [进度记录](docs/progress.md)。每次只完成一个小里程碑，讲解相关知识并验证结果，不一口气完成整个工程。
+```powershell
+.\scripts\run_mlp_sim.ps1
+```
+
+工程生成在 `build/mlp4_lab/mlp4_lab.xpr`。成功终止信息：
+
+```text
+ALL_PASS: 186 tensors, 4836 neurons, 5 reset aborts, latency 229 cycles
+```
+
+在 GUI 打开该工程，Run Behavioral Simulation 后，用 `scripts/add_mlp_waves.tcl` 添加波形，再运行 2400ns 看第一组结果。完整说明见上文链接。
 
 ## 目录
-- rtl/：Verilog设计
-- sim/：仿真与测试向量
-- model/：参考模型和权重导出
-- constraints/：板卡及时间约束
-- scripts/：工程生成与验证脚本
-- docs/：计划、笔记和验证记录
-- build/：生成工程和缓存（Git忽略）
+- rtl/：神经元与四层 MLP 电路、固定权重 ROM。
+- sim/：testbench、输入及预期值。
+- model/：参考模型、固定参数 JSON、参考摘要。
+- scripts/：创建工程、运行仿真、添加波形。
+- docs/：学习说明、计划、进度和真实验证记录。
+- constraints/：后续上板约束；本轮尚未添加。
+- build/：可重建工程、日志与波形，不纳入 Git。
 
-## 第一步已经可以运行
-先阅读 [单神经元学习说明](docs/step1_neuron.md)。
+## 保留的第一步
+[单神经元说明](docs/step1_neuron.md) 与 `scripts/run_sim.ps1` 保持独立，可重跑原来的 42 次测试。
 
-在项目根目录的PowerShell执行 `.\scripts\run_sim.ps1`，成功时输出 `ALL_PASS: 42 numerical cases plus reset/handshake checks`。运行前先关闭本项目已有Vivado工程/波形窗口。
-
-生成工程：`build/neuron_lab/neuron_lab.xpr`。GUI的Run Behavioral Simulation默认停在0ns，添加信号后运行85ns即可观察第一组计算。
-
-完整MLP、量化和上板步骤尚未开始。
+## 学习约定
+见 [AGENTS.md](AGENTS.md)、[计划](docs/plan.md) 和 [进度](docs/progress.md)。每轮一个小里程碑；下一步先读四层波形，再学习综合，随后另行安排实现与上板。
