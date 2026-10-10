@@ -10,6 +10,18 @@
 - 示例输入 [1,2,3,4] → 输出 [-59,-139]。
 - 尚未综合、实现、生成 bitstream 或上板；随机权重输出不代表预测能力。
 
+## 控制台自由输入张量
+
+在项目根目录 PowerShell 执行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\mlp_console.ps1
+```
+
+输入 `[1,2,3,4]` 会调用真实 RTL 仿真并显示 `[-59,-139]`；可连续输入，`q` 退出。只接受四个 -128～127 的整数，不调用 Python 参考程序。
+首次编译，源码或权重变化后自动重编译。用 `-Tensor '[1,2,3,4]'` 可单次执行。
+详见 [控制台使用说明](docs/console_usage.md)。当前仍为电脑上的行为仿真，尚未上板。
+
 ## 开始使用
 先读 [四层 MLP 学习说明](docs/step2_mlp.md)，包括位宽、层间存储、状态机、周期数和波形步骤。
 

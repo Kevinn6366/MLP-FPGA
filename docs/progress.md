@@ -29,3 +29,11 @@
 
 ## 下一小步
 阅读 step2_mlp.md，对照 layer、neuron、input_index 和 bank_a/b 理解层间流动，再由用户决定进入综合。
+
+## 后续完成：交互式CLI
+- 新增mlp_console.ps1，支持自由输入张量、单次-Tensor请求、q退出。
+- 只调用Vivado自带xvlog/xelab/xsim，不调用Python参考模型；网络计算由现有RTL完成。
+- 第一组、全零、全负极值、全正极值与已知回归结果一致，都是229拍。
+- 连续交互、括号/空格格式、缓存复用和脚本变化重编译已验证。
+- 三元素、越界128、小数、附带表达式的输入被拒绝；记录见console_validation.txt。
+- 原四层RTL和权重未改动。本步未综合、实现或上板。

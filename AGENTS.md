@@ -59,3 +59,10 @@
 - RTL为rtl/mlp4.v；独立工程build/mlp4_lab/mlp4_lab.xpr；运行scripts/run_mlp_sim.ps1。
 - 186次推理、4836个神经元预激活及输出、5次中途复位全部通过；请求到done为229拍。
 - 下一步先讲解层计数与双存储区波形，再由用户决定综合；不自动跨到实现或上板。
+
+## 交互式张量仿真
+- 用户希望通过控制台输入张量，只运行RTL仿真，不调用Python参考检查。
+- 入口scripts/mlp_console.ps1，测试台sim/tb_mlp_console.sv；复用rtl/mlp4.v与权重ROM。
+- 支持交互和-Tensor单次请求；4个int8整数，输出2个int32。q退出。
+- 生成目录build/mlp_console独立；源码哈希控制重编译，无效输入不能执行或作为命令解释。
+- 此入口没有任意输入的参考答案，只检查接口时序；完整数值回归仍使用run_mlp_sim.ps1。
