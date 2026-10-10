@@ -5,7 +5,7 @@
 目标流程：电脑参考计算 → 定点量化 → Verilog 仿真 → 综合与实现 → JTAG 上板验证。
 
 ## 当前状态
-仅完成目录、学习路线和Git初始化。尚无可运行的MLP硬件；不表示已完成训练或板上推理。
+已实现四输入单神经元RTL，并用Vivado 2019.1行为仿真通过42次数值测试及复位/握手检查。尚未实现完整MLP、训练、综合或板上推理。
 
 ## 初步范围
 - 小型 4 → 8 → 2 网络，隐藏层采用 ReLU。
@@ -25,4 +25,11 @@
 - docs/：计划、笔记和验证记录
 - build/：生成工程和缓存（Git忽略）
 
-后续会随实际实现补充运行命令，不提供尚不存在的脚本命令。
+## 第一步已经可以运行
+先阅读 [单神经元学习说明](docs/step1_neuron.md)。
+
+在项目根目录的PowerShell执行 `.\scripts\run_sim.ps1`，成功时输出 `ALL_PASS: 42 numerical cases plus reset/handshake checks`。运行前先关闭本项目已有Vivado工程/波形窗口。
+
+生成工程：`build/neuron_lab/neuron_lab.xpr`。GUI的Run Behavioral Simulation默认停在0ns，添加信号后运行85ns即可观察第一组计算。
+
+完整MLP、量化和上板步骤尚未开始。
