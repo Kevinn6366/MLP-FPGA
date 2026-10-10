@@ -1,0 +1,24 @@
+# Rebuildable outputs
+/build/
+/.Xil/
+**/.Xil/
+*.jou
+*.log
+*.str
+*.wdb
+*.vcd
+*.pb
+*.dcp
+*.bit
+*.bin
+*.ltx
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+# Local data and editor/OS files
+/model/datasets/
+/model/checkpoints/
+Thumbs.db
+Desktop.ini
+~$*
